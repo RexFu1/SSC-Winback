@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SMB SIP Calculator – Winback (LOCAL)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+
+</head>
+<body>
+  <div class="header-container">
+    <h2>SMB SIP Calculator - Winback ON</h2>
+
+    <div class="controls-row">
+      <div class="controls-container">
+        <!-- 月份下拉；value 必须与 CONFIG_DATA 的键一致 -->
+        <div class="month-selector">
+          <select id="monthSelect" onchange="onMonthChange()">
+            <option value="January">January 2025 – Low</option>
+            <option value="February">February 2025 – Low</option>
+            <option value="March">March 2025 – Medium</option>
+            <option value="April">April 2025 – Low</option>
+            <option value="May" selected>May 2025 – Low</option>
+            <option value="June">June 2025 – Medium</option>
+          </select>
+        </div>
+
+        <div class="month-selector">
+          <select id="teamSelect">
+            <option value="Winback ON" selected>Winback ON</option>
+          </select>
+        </div>
+
+        <!-- Ramp 下拉 -->
+        <div class="month-selector">
+          <select id="rampSelect" onchange="updateTargets()">
+            <option value="1">Ramped</option>
+            <option value="0.8">Ramping Month 4</option>
+            <option value="0.6">Ramping Month 3</option>
+            <option value="0.4">Ramping Month 2</option>
+            <option value="0.2">Ramping Month 0/1</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- 总佣金显示 -->
+      <div id="totalComm" class="total-commission">Total Commission: $0</div>
+    </div>
+  </div>
+
+  <!-- ===== 目标/销量/佣金表格 ===== -->
+  <div id="tableContainer"></div>
+
+  <!-- 距离下一档提示 -->
+  <div id="gapLine" class="gap-line"></div>
+
+  <!-- 备注 -->
+  <div class="note">
+    Note: each product’s MRR is calculated on the most-sold packages listed below.<br>
+    MP $30–$60  HSIA $160  Bcon $30  TSB $70  BTV $30  CD $15  BWifi $15  DCC $17<br><br>
+    If you have any question, please contact rex.fu1@telus.com
+  </div>
+  
+
+  <script src="xlsxLoader.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
