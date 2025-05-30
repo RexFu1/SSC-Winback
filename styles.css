@@ -24,41 +24,30 @@ h2 {
   padding-left: 12px;
 }
 
-.header-container {
-  display: flex;
+.main-block, .header-container {
   flex-direction: column;
   gap: 20px;
-  width: 100%;
-  margin: 20px;  
+  width: 90%;
+  margin: 20px auto;
   box-sizing: border-box;
 }
 
+/* Align dropdowns and total commission in one row */
+.controls-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 /* Controls */
+
 .controls-container {
   display: flex;
   gap: 20px;
-  justify-content: flex-start; 
-  width: 70%; 
-  margin: 0 auto; 
-  padding-left: 10px;
-  align-items: left;
-  position: absolute; 
-}
-
-.total-commission {
   justify-content: flex-start;
-  margin: 0 auto;
-  font-size: 24px;
-  font-weight: 600;
-  align-items: right;
-  margin-right: 0%; 
-  order: 2;
-}
-
-
-table {
-  width: 100%;
-  margin: 0 0 12px 0%;
+  flex-wrap: wrap;
+  flex: 1;
 }
 
 
@@ -79,13 +68,8 @@ table {
 }
 
 /* Table */
-table {
-  width: 90%;
-  margin: 0 0 30px 5%;
-  border-collapse: collapse;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+#tableContainer table {
+  box-sizing: 0px; 
 }
 
 th,
@@ -155,13 +139,9 @@ td:first-child {
 
 .total-commission {
   font-size: 26px;
-  margin-left: auto;   /* 新增自动左边距推动元素到右侧 */
-  order: 0;            /* 移除order设置 */
-  text-align: right;   /* 文字右对齐 */
-  padding-right: 0%;    /* 保持与表格右边缘对齐 */
-  /* 移除不必要的属性 */
-  /* justify-content: flex-start; */
-  /* align-items: right; */
+  margin-left: auto;
+  text-align: right;
+  padding-right: 0;
 }
 
 /* Note */
@@ -190,5 +170,5 @@ table,
 .note {
   width: 90%;
   max-width: 1200px;
-  margin-left: 0 !important;
+  margin: 0 auto;
 }
